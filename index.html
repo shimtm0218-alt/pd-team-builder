@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PD Team Builder</title>
+<meta name="description" content="반복되는 작업 하나와 역할 2~3개만 정하면, 바로 쓸 수 있는 에이전트 팀 프롬프트가 완성됩니다." />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="brand"><span class="dot" aria-hidden="true"></span>PD Team Builder</div>
+    <a class="ghlink" href="#" id="repoLink" target="_blank" rel="noopener">GitHub</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>나만의 PD 팀 만들기</h1>
+      <p class="sub">반복되는 작업을 하나 떠올리세요. 역할 2~3개를 정하면 바로 쓸 수 있는<br class="brOnly" /> 에이전트 팀 프롬프트가 완성됩니다.</p>
+    </section>
+
+    <section class="card">
+      <div class="field-group">
+        <label class="field-label">어디서 실행하실 거예요?</label>
+        <div class="toggle" role="radiogroup" aria-label="실행 환경">
+          <button type="button" class="toggle-btn active" data-target="claude-code" role="radio" aria-checked="true">Claude Code</button>
+          <button type="button" class="toggle-btn" data-target="other-ai" role="radio" aria-checked="false">다른 AI</button>
+        </div>
+        <p class="hint" id="targetHint">진짜 서브에이전트 팀을 만들어요 — CLAUDE.md와 서브에이전트 파일이 생성되고, Claude Code가 알아서 역할 간에 위임하며 작업을 진행해요.</p>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label" for="taskInput">작업 또는 워크플로우</label>
+        <input type="text" id="taskInput" placeholder="예: 신규 화면 디자인 QA 진행" autocomplete="off" />
+      </div>
+
+      <div class="field-group">
+        <label class="field-label">빠른 시작</label>
+        <div class="presets" id="presets">
+          <button type="button" class="preset-btn" data-preset="qa">디자인 QA</button>
+          <button type="button" class="preset-btn" data-preset="case-study">케이스 스터디 정리</button>
+          <button type="button" class="preset-btn" data-preset="research">리서치 synthesis</button>
+          <button type="button" class="preset-btn" data-preset="renewal">화면 리뉴얼 기획</button>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <div class="roles-head">
+          <label class="field-label">나의 팀</label>
+          <div class="roles-col-labels"><span>역할</span><span>하는 일</span></div>
+        </div>
+        <div id="rolesList"></div>
+        <button type="button" class="add-role-btn" id="addRoleBtn">+ 역할 추가</button>
+      </div>
+    </section>
+
+    <section class="card output-card">
+      <div class="output-head">
+        <label class="field-label">생성된 팀 프롬프트</label>
+        <div class="output-actions">
+          <button type="button" class="ghost-btn" id="resetBtn">초기화</button>
+          <button type="button" class="primary-btn" id="copyBtn">프롬프트 복사</button>
+        </div>
+      </div>
+      <pre id="output" class="output-box">작업과 역할 두 개 이상을 입력하면 프롬프트가 생성됩니다 →</pre>
+    </section>
+  </main>
+
+  <footer class="bottom">
+    <p>PD Team Builder · 어떤 프로젝트에서든 반복해서 쓸 수 있는 범용 팀 빌더</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

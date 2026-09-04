@@ -1,0 +1,275 @@
+:root {
+  --bg: #f7f5f1;
+  --card: #ffffff;
+  --ink: #17181a;
+  --ink-soft: #55585e;
+  --line: #e4e1da;
+  --accent: #2f6b4f;
+  --accent-soft: #e9f2ec;
+  --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Pretendard, "Apple SD Gothic Neo", sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  line-height: 1.5;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 32px;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: inline-block;
+}
+
+.ghlink {
+  font-size: 13px;
+  color: var(--ink-soft);
+  text-decoration: none;
+  border: 1px solid var(--line);
+  padding: 6px 12px;
+  border-radius: 999px;
+}
+.ghlink:hover { border-color: var(--ink-soft); color: var(--ink); }
+
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 24px 80px;
+}
+
+.hero {
+  text-align: left;
+  padding: 32px 0 28px;
+}
+.hero h1 {
+  font-size: 40px;
+  margin: 0 0 14px;
+  letter-spacing: -0.01em;
+}
+.hero .sub {
+  color: var(--ink-soft);
+  font-size: 16px;
+  margin: 0;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 28px;
+  margin-bottom: 24px;
+}
+
+.field-group { margin-bottom: 26px; }
+.field-group:last-child { margin-bottom: 0; }
+
+.field-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.toggle {
+  display: inline-flex;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 3px;
+  background: #fbfaf8;
+}
+.toggle-btn {
+  border: none;
+  background: transparent;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  cursor: pointer;
+}
+.toggle-btn.active {
+  background: var(--ink);
+  color: #fff;
+}
+
+.hint {
+  margin: 10px 2px 0;
+  font-size: 13px;
+  color: var(--ink-soft);
+  max-width: 560px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: inherit;
+  color: var(--ink);
+  background: #fbfaf8;
+}
+input[type="text"]:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: #fff;
+}
+
+.presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.preset-btn {
+  border: 1px solid var(--line);
+  background: #fbfaf8;
+  color: var(--ink);
+  padding: 7px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  cursor: pointer;
+}
+.preset-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+.roles-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.roles-col-labels {
+  display: flex;
+  gap: 12px;
+  font-size: 12px;
+  color: var(--ink-soft);
+  padding-right: 34px;
+}
+.roles-col-labels span:first-child { width: 160px; }
+
+.role-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.role-row .role-num {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.role-row input {
+  padding: 10px 12px;
+  font-size: 14px;
+}
+.role-row input.role-name { width: 160px; flex-shrink: 0; }
+.role-row input.role-desc { flex: 1; }
+.role-row .remove-role {
+  width: 22px;
+  height: 22px;
+  border: none;
+  background: transparent;
+  color: var(--ink-soft);
+  cursor: pointer;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.role-row .remove-role:hover { color: #c0392b; }
+
+.add-role-btn {
+  border: 1px dashed var(--line);
+  background: transparent;
+  color: var(--ink-soft);
+  padding: 9px 16px;
+  border-radius: 10px;
+  font-size: 13px;
+  cursor: pointer;
+  margin-top: 4px;
+}
+.add-role-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+.output-card { padding-bottom: 20px; }
+.output-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.output-actions { display: flex; gap: 8px; }
+
+.ghost-btn, .primary-btn {
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 14px;
+  cursor: pointer;
+  border: 1px solid var(--line);
+}
+.ghost-btn { background: transparent; color: var(--ink-soft); }
+.ghost-btn:hover { color: var(--ink); }
+.primary-btn { background: var(--ink); color: #fff; border-color: var(--ink); }
+.primary-btn:hover { background: #000; }
+.primary-btn.copied { background: var(--accent); border-color: var(--accent); }
+
+.output-box {
+  background: #fbfaf8;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 18px;
+  font-family: var(--mono);
+  font-size: 12.5px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: var(--ink-soft);
+  max-height: 480px;
+  overflow-y: auto;
+  margin: 0;
+}
+.output-box.filled { color: var(--ink); }
+
+.bottom {
+  text-align: center;
+  color: var(--ink-soft);
+  font-size: 12.5px;
+  padding: 24px 24px 40px;
+}
+
+@media (max-width: 520px) {
+  .hero h1 { font-size: 30px; }
+  .roles-col-labels { display: none; }
+  .role-row { flex-wrap: wrap; }
+  .role-row input.role-name { width: 100%; }
+  .role-row input.role-desc { width: 100%; }
+}
