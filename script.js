@@ -86,6 +86,13 @@ ${PERSONA_OUTPUT}`;
 절대 하지 말 것: A/B/C를 좋다/나쁘다로 서열화하지 않는다. 지표별로 어떤 안이 유리한지만 각각 제시한다.`;
 
   const PRESETS = {
+    research: {
+      task: "유저 인터뷰 결과 synthesis",
+      roles: [
+        { name: "노트 정리자", desc: "인터뷰 원문에서 반복되는 패턴과 핵심 인용구를 뽑아낸다" },
+        { name: "인사이트 도출자", desc: "정리된 패턴을 바탕으로 디자인 시사점과 다음 액션을 도출한다" }
+      ]
+    },
     "pm-requirement": {
       task: "PM 기획서를 반영해 화면을 개선하거나 신규 설계",
       roles: [
@@ -94,6 +101,14 @@ ${PERSONA_OUTPUT}`;
         { name: "페르소나B-PO출신PD", desc: PERSONA_B },
         { name: "페르소나C-컨셉PD", desc: PERSONA_C },
         { name: "목표-지표", desc: ROLE3_GOAL_METRIC }
+      ]
+    },
+    renewal: {
+      task: "기존 화면 구조를 새로운 IA로 리뉴얼",
+      roles: [
+        { name: "IA 설계자", desc: "정보 구조와 화면 흐름을 재설계한다" },
+        { name: "카피라이터", desc: "화면에 들어갈 문구와 톤앤매너를 정리한다" },
+        { name: "QA 리뷰어", desc: "기존 화면과의 차이, 엣지케이스를 점검한다" }
       ]
     },
     qa: {
@@ -109,22 +124,8 @@ ${PERSONA_OUTPUT}`;
         { name: "스토리텔러", desc: "문제 정의부터 해결 과정, 성과까지 하나의 흐름으로 구성한다" },
         { name: "데이터 분석가", desc: "프로젝트 성과 지표와 근거를 정리해 주장을 뒷받침한다" }
       ]
-    },
-    research: {
-      task: "유저 인터뷰 결과 synthesis",
-      roles: [
-        { name: "노트 정리자", desc: "인터뷰 원문에서 반복되는 패턴과 핵심 인용구를 뽑아낸다" },
-        { name: "인사이트 도출자", desc: "정리된 패턴을 바탕으로 디자인 시사점과 다음 액션을 도출한다" }
-      ]
-    },
-    renewal: {
-      task: "기존 화면 구조를 새로운 IA로 리뉴얼",
-      roles: [
-        { name: "IA 설계자", desc: "정보 구조와 화면 흐름을 재설계한다" },
-        { name: "카피라이터", desc: "화면에 들어갈 문구와 톤앤매너를 정리한다" },
-        { name: "QA 리뷰어", desc: "기존 화면과의 차이, 엣지케이스를 점검한다" }
-      ]
     }
+  
   };
 
   const el = {
