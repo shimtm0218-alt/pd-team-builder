@@ -155,6 +155,13 @@ input[type="text"]:focus {
   cursor: pointer;
 }
 .preset-btn:hover { border-color: var(--accent); color: var(--accent); }
+.preset-btn.preset-featured {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 600;
+}
+.preset-btn.preset-featured:hover { background: var(--accent); color: #fff; }
 
 .roles-head {
   display: flex;
@@ -173,7 +180,7 @@ input[type="text"]:focus {
 .role-row {
   display: flex;
   gap: 12px;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: 10px;
 }
 .role-row .role-num {
@@ -188,13 +195,31 @@ input[type="text"]:focus {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  margin-top: 8px;
 }
 .role-row input {
   padding: 10px 12px;
   font-size: 14px;
 }
 .role-row input.role-name { width: 160px; flex-shrink: 0; }
-.role-row input.role-desc { flex: 1; }
+.role-row textarea.role-desc {
+  flex: 1;
+  padding: 10px 12px;
+  font-size: 13px;
+  font-family: var(--sans);
+  line-height: 1.55;
+  color: var(--ink);
+  background: #fbfaf8;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  resize: vertical;
+  min-height: 42px;
+}
+.role-row textarea.role-desc:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: #fff;
+}
 .role-row .remove-role {
   width: 22px;
   height: 22px;
@@ -204,6 +229,7 @@ input[type="text"]:focus {
   cursor: pointer;
   font-size: 16px;
   flex-shrink: 0;
+  margin-top: 4px;
 }
 .role-row .remove-role:hover { color: #c0392b; }
 
@@ -271,5 +297,5 @@ input[type="text"]:focus {
   .roles-col-labels { display: none; }
   .role-row { flex-wrap: wrap; }
   .role-row input.role-name { width: 100%; }
-  .role-row input.role-desc { width: 100%; }
+  .role-row textarea.role-desc { width: 100%; }
 }

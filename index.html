@@ -31,12 +31,19 @@
 
       <div class="field-group">
         <label class="field-label" for="taskInput">작업 또는 워크플로우</label>
-        <input type="text" id="taskInput" placeholder="예: 신규 화면 디자인 QA 진행" autocomplete="off" />
+        <input type="text" id="taskInput" placeholder="예: PM 기획서를 반영해 화면을 개선하거나 신규 설계" autocomplete="off" />
+      </div>
+
+      <div class="field-group">
+        <label class="field-label" for="refLinkInput">참고 링크 (선택)</label>
+        <input type="text" id="refLinkInput" placeholder="예: 이번 작업 중인 Figma 파일 링크" autocomplete="off" />
+        <p class="hint">넣으면 생성된 프롬프트의 "참고 자료"에 그대로 포함돼요. 화면을 직접 만드는 역할이 있다면, 새 파일 대신 이 링크의 파일 안에 새 페이지를 만들어 배치하도록 안내해요.</p>
       </div>
 
       <div class="field-group">
         <label class="field-label">빠른 시작</label>
         <div class="presets" id="presets">
+          <button type="button" class="preset-btn preset-featured" data-preset="pm-requirement">PM 요구사항 반영 (실전형 5역할)</button>
           <button type="button" class="preset-btn" data-preset="qa">디자인 QA</button>
           <button type="button" class="preset-btn" data-preset="case-study">케이스 스터디 정리</button>
           <button type="button" class="preset-btn" data-preset="research">리서치 synthesis</button>
@@ -47,7 +54,7 @@
       <div class="field-group">
         <div class="roles-head">
           <label class="field-label">나의 팀</label>
-          <div class="roles-col-labels"><span>역할</span><span>하는 일</span></div>
+          <div class="roles-col-labels"><span>역할</span><span>하는 일 (여러 줄 가능)</span></div>
         </div>
         <div id="rolesList"></div>
         <button type="button" class="add-role-btn" id="addRoleBtn">+ 역할 추가</button>
